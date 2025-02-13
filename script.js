@@ -1,38 +1,40 @@
-function changeImage(element) {
-    document.getElementById('mainImage').src = element.src;
+function increaseQuantity() {
+    let quantityElem = document.getElementById('quantity');
+    let currentQuantity = parseInt(quantityElem.textContent);
+    quantityElem.textContent = currentQuantity + 1;
 }
 
-function selectSize(element) {
-    document.querySelectorAll('.size').forEach(size => size.classList.remove('selected'));
-    element.classList.add('selected');
-}
-function increaseQuantity() {
-    let quantity = document.getElementById('quantity');
-    quantity.textContent = parseInt(quantity.textContent) + 1;
-}
 function decreaseQuantity() {
-    let quantity = document.getElementById('quantity');
-    if (parseInt(quantity.textContent) > 1) {
-        quantity.textContent = parseInt(quantity.textContent) - 1;
+    let quantityElem = document.getElementById('quantity');
+    let currentQuantity = parseInt(quantityElem.textContent);
+    if (currentQuantity > 1) {
+        quantityElem.textContent = currentQuantity - 1;
     }
 }
 
+
 function selectColor(element) {
-    document.querySelectorAll('.color input').forEach(input => input.checked = false);
-    element.checked = true;
+    document.querySelectorAll('.color-box').forEach(color => {
+        color.classList.remove("selected");
+    });
+    element.classList.add("selected");
 }
 
 
-addToCartBtn.addEventListener("click", function () {
+document.querySelector(".add-to-cart").addEventListener("click", function () {
+    let quantity = parseInt(document.getElementById('quantity').textContent);
+    
+    const selectedColor = document.querySelector(".color-box.selected");
+    const colorValue = selectedColor ? selectedColor.style.backgroundColor : "Default Color";
+
     const product = {
-        name: "Embrace Sideboard", 
-        price: 12999.00, 
-        quantity: quantity
+        name: "Embrace Sideboard",
+        price: 12999.00,
+        quantity: quantity,
+        color: colorValue
     };
 
-    
     localStorage.setItem("cartItem", JSON.stringify(product));
 
-    
-    alert(`Added ${quantity} item(s) to cart!`);
+    alert(`Added ${quantity} item(s) of color ${colorValue} to cart!`);
 });
