@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="product-images">
+                <img id="mainImage" src="/images/image1.jpeg" alt="Product Image">
+                <div class="thumbnails">
+                    <img src="/images/image2.jpeg" onclick="changeImage(this)">
+                    <img src="/images/image3.jpeg" onclick="changeImage(this)">
+                    <img src="/images/image4.jpeg" onclick="changeImage(this)">
+                    <img src="/images/image4.jpeg" onclick="changeImage(this)">
+                </div>
+            </div>
+            <div class="product-details">
+                <p class="text-color">Mermeto</p>
+                <h1>Embrace Sideboard</h1>
+                <hr>
+                <p class="price"><span id="discountPrice">$12999.00</span>            <span class="discount">35% Off</span><br>
+                     <span class="original-price">$19999.00</span> </p>
+                <hr>
+                <p class="text-color">Choose a Color:</p>
+                <div class="color-options">
+                    <label class="color">
+                        <input type="radio" name="color" checked onclick="selectColor(this)">
+                        <span class="color-box" style="background: #E0C4A8"></span>
+                    </label>
+                    <label class="color">
+                        <input type="radio" name="color" onclick="selectColor(this)">
+                        <span class="color-box" style="background: #B2D235"></span>
+                    </label>
+                    <label class="color">
+                        <input type="radio" name="color" onclick="selectColor(this)">
+                        <span class="color-box" style="background: #A8A5E0"></span>
+                    </label>
+                    <label class="color">
+                        <input type="radio" name="color" onclick="selectColor(this)">
+                        <span class="color-box" style="background: #E0A8D2"></span>
+                    </label>
+                </div>
+                
+                <hr>
+                <p class="text-color">Choose a Size:</p>
+                <div class="size-options">
+                    <button class="size selected" onclick="selectSize(this)">Small</button>
+                    <button class="size" onclick="selectSize(this)">Medium</button>
+                    <button class="size" onclick="selectSize(this)">Large</button>
+                    <button class="size" onclick="selectSize(this)">Extra Large</button>
+                    <button class="size" onclick="selectSize(this)">XXL</button>
+                </div>
+                
+              
+                <div class="cart">
+                    <div class="quantity">
+                        <button onclick="decreaseQuantity()">-</button>
+                        <span id="quantity">1</span>
+                        <button onclick="increaseQuantity()">+</button>
+                    </div>
+                    
+                    <button class="add-to-cart" >🛒 Add to Cart</button>
+                </div>
+
+              <hr>
+
+                <div class="product-description">
+                    
+                    <p>The Embrace Sideboard is a stylish wear. With a top cloth designed to provide superior protection and look great, this storage solution is both functional and attractive. It fits seamlessly into any home decor, with clean lines and a timeless look. Crafted from premium materials for a combination of style, durability, and reliability.</p>
+                
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
